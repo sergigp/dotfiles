@@ -1,0 +1,16 @@
+[user]
+	name = sergi.gonzalez
+	email = sergi.gonzalez@atrapalo.com
+[alias]
+        ci = commit
+        st = status
+        co = checkout
+        br = branch
+	hist = log --graph --decorate --pretty=format:'%C(bold blue)%Creset%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)'--abbrev-commit --date=relative
+	ls = log --pretty=format:"%C(yellow)%h\\ %ad%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --date=short --no-merges
+	ll = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --numstat --no-merges
+	filelog = log -u
+	diffc  = "!f() { git diff "$1"^.."$1"; }; f"
+	gr = grep -Iin
+[color]
+	ui = true

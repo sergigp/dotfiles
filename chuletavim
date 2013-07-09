@@ -1,0 +1,43 @@
+chuleta vim:
+
+EDICION
+
+x = borrar caracter donde estas
+dw = delete word (desde donde estas al siguiente espacio)
+	2dw = borrar dos palabras
+cw = borra y entra en modo edicion
+dd = eliminar linea
+	2dd = dos lineas
+cc = borrar linea y entra en edicion
+	2cc = borrar 2 y editar
+db = delete before (desde donde estas al especio anterior)
+ct" = borrar lo de dentro de "
+ci" = borrar lo de dentro de " estando el cursor dentro
+
+MOVIMIENTO RAPIDO:
+
+w = moverte entre palabras hacia delante (sensible a simbolos)
+	W = moverte entre palabras hacia delante (busca primer caracter despues de un espacio)
+b = moverte entre palabras hacia atras
+	B = moverte entre palabras hacia atras	
+$ = final de linea
+A = final de linea y edicion MUY BUENO !!
+^ = inicio de linea (primer caracter no espacio)
+0 = inciio de linea (aunque hayan espacios)
+gg = inicio fichero
+	4gg = ir a la cuarta linea OJO !!
+G = final de fichero
+} = parrafo siguiente
+{ = parrafo anterior
+fR = buscar R en la misma lineia hacia adelante adelante
+FR = buscar R en la misma linea hacia atras
+
+
+
+
+
+
+lorem  easdf sss asda tal
+iYou didn’t have enough o
+f movement in the previous lesson? That’s great because in this lesson we’ll look into ways to navigate even faster through y
+our files so you don’t have to waste time.

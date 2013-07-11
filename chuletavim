@@ -14,12 +14,21 @@ db = delete before (desde donde estas al especio anterior)
 ct" = borrar lo de dentro de "
 ci" = borrar lo de dentro de " estando el cursor dentro
 
+C&P:
+v = modo seleccion (por cursor)
+V = modo seleccion (por lineas)
+d = cortar (teniendo algo seleccionado en modo seleccion)
+p = paste (despues del cursor)
+	P = paste (antes del cursor)
+yw = yank word - copiar palabra
+yy = yank line
+
 MOVIMIENTO RAPIDO:
 
 w = moverte entre palabras hacia delante (sensible a simbolos)
 	W = moverte entre palabras hacia delante (busca primer caracter despues de un espacio)
 b = moverte entre palabras hacia atras
-	B = moverte entre palabras hacia atras	
+	B = moverte entre palabras hacia atras
 $ = final de linea
 A = final de linea y edicion MUY BUENO !!
 ^ = inicio de linea (primer caracter no espacio)
@@ -37,7 +46,13 @@ FR = buscar R en la misma linea hacia atras
 
 
 
-lorem  easdf sss asda tal
+loal
 iYou didn’t have enough o
 f movement in the previous lesson? That’s great because in this lesson we’ll look into ways to navigate even faster through y
 our files so you don’t have to waste time.
+ss aG
+ss 
+
+f movement in the previous lesson? That’s great because in this lesson we’ll look into ways to navigate even faster through y
+evious lesson? That’s great because in this lesson we’ll look into ways to navigate even faster through y
+rem  easdf sasda t

@@ -3,7 +3,7 @@ syntax enable
 
 " APPERANCE
 set background=dark
-colorscheme solarized
+colorscheme desert
 set number 
 set incsearch
 " set ignorecase

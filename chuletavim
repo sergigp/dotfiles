@@ -5,6 +5,7 @@ control + d = media pantalla hacia abajo
 control + u = media pantalla hacia arriba
 control + f = forward - una pantalla abajo
 control + b = backward - una pantalla hacia arriba
+
 M = mover cursor a la mitad de la pantalla
 H = mover el cursor hacia arriba de la pantalla
 L = mover el cursor hacia abajo de la pantalla
@@ -15,6 +16,8 @@ m + a = guarda linea en registro (similar a los favoritos)
 
 EDICION
 x = borrar caracter donde estas
+o = inserta una linea despues
+O = inserta una linea antes
 dw = delete word (desde donde estas al siguiente espacio)
 	2dw = borrar dos palabras
 cw = borra y entra en modo edicion
@@ -79,6 +82,28 @@ q = finalizar recording
 @@ = ejecuta ultima macro
 240@a = ejecuta la macro 240 veces
 :registers = ver los registros	
+
+TERMINAL:
+:! ls = ejecuta ls
+:r !ls = pinta el output de ls en el cursor
+:r !curl --silent url = descarga fichero y lo pinta
+- usando el modo visual se puede seleccionar un texto y pasarselo de input a un comando
+
+BUFFERS
+:ls = muestra buffers
+:bn = next buffer
+:bp = previous buffer
+:b# = buffer anterior (que ya hayas abierto)
+:bf = primer buffer
+:bd = buffer delete actual
+:bd1 = borra el primer buffer
+
+WINDOWS
+:vs fichero = vertical split
+:sp fichero = horizontal split
+:sv 2 = abre el buffer dos en split
+:sb 2 = abre el buffer dos en split
+
 
 MODOS: 
 v = visual

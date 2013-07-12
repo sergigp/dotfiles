@@ -33,3 +33,11 @@ autocmd vimenter * NERDTree " autoopen nerdtree
 autocmd vimenter * if !argc() | NERDTree | endif " autoopen nerdtree without file selected
 map <C-n> :NERDTreeToggle<CR> 
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+
+
+
+" curso 
+set nocompatible " movidas entre vi y vim, obligatorio ?
+set foldmethod " ?
+" let mepleader=',' investigar
+" set autoindent

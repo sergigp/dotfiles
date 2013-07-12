@@ -10,6 +10,6 @@ set incsearch
 set hlsearch " nohlsearch to disable 
 " set smartcase
 set laststatus=2 "status bar
-" cambio del color de statusbar al cambiar de modo
-au InsertEnter * hi StatusLine term=reverse ctermbg=5 gui=undercurl guisp=Magenta
-au InsertLeave * hi StatusLine term=reverse ctermfg=0 ctermbg=2 gui=bold,reverse
+hi StatusLine ctermbg=white ctermfg=red
+au InsertEnter * hi StatusLine term=reverse ctermbg=black ctermfg=yellow 
+au InsertLeave * hi StatusLine term=reverse ctermfg=red ctermbg=white

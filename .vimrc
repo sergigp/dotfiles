@@ -3,7 +3,6 @@ syntax enable
 
 " APPERANCE
 set background=dark
-colorscheme desert
 set number 
 set laststatus=2 "status bar
 hi StatusLine ctermbg=white ctermfg=red
@@ -22,22 +21,7 @@ set incsearch
 set hlsearch " nohlsearch to disable 
 " set smartcase
 
-" PATHOGEN
-execute pathogen#infect()
-syntax on
-filetype plugin indent on
-
-" PLUGINS
-" nerdtree
-autocmd vimenter * NERDTree " autoopen nerdtree
-autocmd vimenter * if !argc() | NERDTree | endif " autoopen nerdtree without file selected
-map <C-n> :NERDTreeToggle<CR> 
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
-
-
 
 " curso 
 set nocompatible " movidas entre vi y vim, obligatorio ?
 set foldmethod " ?
-" let mepleader=',' investigar
-" set autoindent

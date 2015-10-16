@@ -22,23 +22,28 @@ set fish_plugins autojump percol
 # Load oh-my-fish configuration.
 . $fish_path/oh-my-fish.fish
 
-
 # aliases
 alias dev="cd ~/dev"
 alias e="subl"
-alias phpunit='vendor/bin/phpunit'
-alias behat='vendor/bin/behat'
+alias phpunit="~/.composer/vendor/bin/phpunit"
+# alias behat="~/.composer/vendor/bin/behat"
 alias cache_osiris='sh ~/cache_osiris.sh'
 alias fpm="/usr/local/Cellar/php54/5.4.31/sbin/php54-fpm"
-# alias use53="brew unlink php54 > /dev/null; brew unlink php55 > /dev/null; brew unlink php53 > /dev/null; brew link php53; fpm stop;"
-#alias use54="brew unlink php53 > /dev/null; brew unlink php55 > /dev/null; brew unlink php54 > /dev/null; brew link php54 > /dev/null; fpm stop > /dev/null; fpm start > /dev/null; php -v; fpm status"
-#alias use55="brew unlink php53 > /dev/null; brew unlink php54 > /dev/null; brew unlink php55 > /dev/null; brew link php55; fpm stop"
 alias frontal-ssh="ssh -i ~/.ssh/akamon -p 8822 sergi.gonzalez@frontales01.prod.akamon.com"
+alias puppet-ssh="ssh -l deploy -i ~/.ssh/deployer-id_rsa -p 8822 puppet.akamon.com"
+alias tunnel="ssh -i ~/.ssh/akamon -l sergi.gonzalez -p 8822 payments-tunnel.devel.akamon.com -g -R 1025:0.0.0.0:8080 -N -v"
+alias pf="phpunit --filter"
+alias ba="vendor/bin/behat -p api"
+alias editfish="e ~/.config/fish/config.fish"
+alias reloadfish="source ~/.config/fish/config.fish"
+alias pb="phpunit --exclude-group=integration,external"
+alias pi="phpunit --group=integration,external"
+
 
 function unlinkphp
-	brew unlink php54 > /dev/null;
-	brew unlink php55 > /dev/null;
 	brew unlink php53 > /dev/null;
+	brew unlink php54 > /dev/null;
+	brew unlink php56 > /dev/null;
 end
 
 function showphpfpm
@@ -59,14 +64,42 @@ end
 function use54
 	unlinkphp
 	brew link php54 > /dev/null;
-	fpm stop > /dev/null;
+	killall php-fpm
+	sudo rm /usr/sbin/php-fpm
+	sudo ln -s /usr/local/Cellar/php55/5.4.31/sbin/php-fpm /usr/sbin/php-fpm
 	fpm start > /dev/null;
 	showphpfpm
 end
 
-function use55
+function use56
 	unlinkphp
-	brew link php55 > /dev/null;
-	fpm stop > /dev/null;
+	brew link php56 > /dev/null;
+	killall php-fpm
+	sudo rm /usr/sbin/php-fpm
+	sudo ln -s /usr/local/Cellar/php56/5.6.6/sbin/php-fpm /usr/sbin/php-fpm
 	showphpfpm
+end
+
+function log_mysql
+	mysql -uroot -e "SET GLOBAL general_log = 'ON';"
+	mysql -uroot -e "SET GLOBAL general_log_file = '/Users/sergigp/mysql.log';"
+	tail -f /Users/sergigp/mysql.log;
+end
+
+function uuid_db
+	set uuid (uuidgen | sed 's/\-//g')
+	echo -n $uuid | pbcopy
+	echo $uuid 
+end
+
+function uuid_code
+	set uuid (uuidgen | tr '[:upper:]' '[:lower:]')
+	echo -n $uuid | pbcopy
+	echo $uuid 
+end
+
+function uuid_to_db
+    set uuid (echo $argv | tr '[:lower:]' '[:upper:]' | sed 's/\-//g')
+	echo -n $uuid | pbcopy
+	echo $uuid
 end
